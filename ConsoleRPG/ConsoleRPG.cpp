@@ -33,6 +33,9 @@ int main()
 
     while (true)
     {
+
+        int Enemy = 0;
+
         // ====================================
         // タイトル画面
         // ====================================
@@ -59,7 +62,7 @@ int main()
                 player.hp = 100;
 
                 // 敵を作り直す
-                enemy = EnemyFactory::CreateEnemy(0);
+                enemy = EnemyFactory::CreateEnemy(Enemy);
 
                 cout << endl;
                 cout << "ゲームを開始します！" << endl;
@@ -294,6 +297,7 @@ int main()
             // タイトルに戻る
             if (command == 1)
             {
+
                 player.hp = 100;
 
                 enemy = EnemyFactory::CreateEnemy(0);
