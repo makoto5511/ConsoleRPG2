@@ -58,8 +58,6 @@ int main()
             // ゲーム開始
             if (command == 1)
             {
-                // プレイヤーを初期状態に戻す
-                player.hp = 100;
 
                 // 敵を作り直す
                 enemy = EnemyFactory::CreateEnemy(Enemy);
