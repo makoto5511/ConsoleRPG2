@@ -30,6 +30,8 @@ int main()
     // 敵を次の敵にするための変数
     int Enemy = 0;      // 初期はスライムから
 
+    int potion = 30;    //　回復
+
     // ========================================
     // ゲームループ
     // ========================================
@@ -48,7 +50,8 @@ int main()
             cout << "============================" << endl;
 
             cout << "1. ゲーム開始" << endl;
-            cout << "2. ゲーム終了" << endl;
+            cout << "2. 回復" << endl;
+            cout << "3. ゲーム終了" << endl;
             cout << "> ";
 
             int command;
@@ -58,7 +61,6 @@ int main()
             // ゲーム開始
             if (command == 1)
             {
-
                 // 敵を作り直す
                 enemy = EnemyFactory::CreateEnemy(Enemy);
 
@@ -72,8 +74,18 @@ int main()
                 state = GameState::BATTLE;
             }
 
+            //　回復
+            if (command == 2) 
+            {
+                cout << "回復" << endl;
+                // 戦闘状態へ
+                state = GameState::BATTLE;
+            }
+
+
+
             // ゲーム終了
-            else if (command == 2)
+            else if (command == 3)
             {
                 cout << endl;
                 cout << "ゲームを終了します。" << endl;
