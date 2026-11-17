@@ -8,6 +8,7 @@
 
 using namespace std;
 
+
 int main()
 {
     // ========================================
@@ -18,7 +19,7 @@ int main()
     Player player("勇者", 100, 20);
 
     // 敵
-    Enemy enemy = EnemyFactory::CreateEnemy(2);
+    Enemy enemy = EnemyFactory::CreateEnemy(0);
 
     // 戦闘ログ用オブジェクトプール
     ObjectPool logPool;
@@ -26,6 +27,8 @@ int main()
     // ゲーム状態
     GameState state = GameState::TITLE;
 
+    // 敵を次の敵にするための変数
+    int Enemy = 0;      // 初期はスライムから
 
     // ========================================
     // ゲームループ
@@ -33,9 +36,6 @@ int main()
 
     while (true)
     {
-
-        int Enemy = 0;
-
         // ====================================
         // タイトル画面
         // ====================================
@@ -297,11 +297,8 @@ int main()
             // タイトルに戻る
             if (command == 1)
             {
-
-                player.hp = 100;
-
-                enemy = EnemyFactory::CreateEnemy(0);
-
+                // ここで次の敵にする
+                Enemy++;
                 state = GameState::TITLE;
             }
 
