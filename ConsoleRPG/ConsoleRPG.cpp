@@ -374,6 +374,7 @@ int main()
     // ========================================
 
     cout << endl;
+    cout << " 合計スコア " << GameManager::GetInstance()->GetScore() << endl;
     cout << "============================" << endl;
     cout << "       お疲れ様でした！" << endl;
     cout << "============================" << endl;
